@@ -1,0 +1,26 @@
+{
+  "name": "microsofthackathon",
+  "version": "1.0.0",
+  "description": "\"# MicrosoftHackathon\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tahreeem/MicrosoftHackathon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tahreeem/MicrosoftHackathon/issues"
+  },
+  "homepage": "https://github.com/Tahreeem/MicrosoftHackathon#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.21",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7"
+  }
+}
