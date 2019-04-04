@@ -59,12 +59,57 @@ app.get("/results", function (req, res) {
 });
 
 app.post("/api/submit", function(req, res) {
-    con.query("INSERT INTO test1 (anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", function (err, data) {
-        if (err) throw err;
-        console.log(data);
-        res.render("results", {data: data});
-        // res.json({ id: result.insertId });
-    });
+    function printQuestionMarks(num) {
+        var arr = [];
+    
+        for (var i = 0; i < num; i++) {
+            arr.push("?");
+        }
+        return arr.toString();
+    }
+    
+    // Helper function to convert object key/value pairs to SQL syntax
+    function objToSql(ob) {
+        var arr = [];
+    
+        // loop through the keys and push the key/value as a string int arr
+        for (var key in ob) {
+            var value = ob[key];
+            // check to skip hidden properties
+            if (Object.hasOwnProperty.call(ob, key)) {
+                // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
+                if (typeof value === "string" && value.indexOf(" ") >= 0) {
+                    value = "'" + value + "'";
+                }
+                arr.push(key + "=" + value);
+            }
+        }
+    
+        // translate array of strings to a single comma-separated string
+        return arr.toString();
+    }
+
+     function insertOne(table, cols, vals, cb) {
+        var makeNewRecord = "INSERT INTO " + table;
+
+        makeNewRecord += " (";
+        makeNewRecord += cols.toString();
+        makeNewRecord += ") ";
+        makeNewRecord += "VALUES (";
+        makeNewRecord += printQuestionMarks(vals.length);
+        makeNewRecord += ") ";
+
+        console.log(makeNewRecord);
+
+        con.query(makeNewRecord, function (err, data) {
+            if (err) throw err;
+            console.log(data);
+            cb(result);
+            res.json({data: data});
+            // res.json({ id: result.insertId });
+        });    
+    }
+    // var sql = "INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour) VALUES (now(), ?)";
   });
 
 app.listen(PORT, function () {

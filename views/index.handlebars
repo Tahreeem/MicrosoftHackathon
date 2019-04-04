@@ -23,7 +23,20 @@
     <a href="/results">Go To Results</a>
     <br /> <br />
     {{form-open 'record' url class='form' action="/api/submit" method="post" }}
-    {{form-file 'fileupload'}}
+    {{!-- {{form-file 'fileupload'}} --}}
+    <input type="hidden" name="anger" value="true">
+    <input type="hidden" name="contempt" value="false">
+    <input type="hidden" name="disgust" value="false">
+    <input type="hidden" name="fear" value="false">
+    <input type="hidden" name="happiness" value="false">
+    <input type="hidden" name="neutral" value="false">
+    <input type="hidden" name="sadness" value="false">
+    <input type="hidden" name="surprise" value="false">
+    <input type="hidden" name="eyeMakeup" value="false">
+    <input type="hidden" name="lipMakeup" value="false">
+    <input type="hidden" name="moustache" value="false">
+    <input type="hidden" name="beard" value="false">
+    <input type="hidden" name="smile" value="false">
     <br /> <br />
     {{#data}}
     <label value="questionOne">{{ questionOne }}</label>
