@@ -1,0 +1,14 @@
+.mainContainer {
+    padding: 10px;
+    width: 80%;
+    margin: auto;
+}
+
+.eachResult {
+    padding: 15px;
+    margin: 15px;
+}
+
+.resultText {
+    padding: 5px;
+}

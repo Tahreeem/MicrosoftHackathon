@@ -50,11 +50,19 @@ app.get("/", function (req, res) {
     });
 });
 
+app.get("/results", function (req, res) {
+    con.query("SELECT * FROM AzureHack.test1;", function (err, data) {
+        if (err) throw err;
+        console.log(data);
+        res.render("results", {data: data});
+    });
+});
+
 app.post("/api/submit", function(req, res) {
     con.query("INSERT INTO test1 (anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", function (err, data) {
         if (err) throw err;
         console.log(data);
-        res.render("index", {data: data});
+        res.render("results", {data: data});
         // res.json({ id: result.insertId });
     });
   });
