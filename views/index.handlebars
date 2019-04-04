@@ -20,17 +20,76 @@
 </nav>
 
 <div class="mainContainer">
-    <h1>Hello World</h1>
-    Days I Was Angry
-    {{#each data}}
-    {{#if anger}}
-    <ul>
-        <li> Record #: {{ _id }}</li>
-        <li> Q1: [{{ questionOne }}] Q2: [{{ questionTwo }}] Q3: [{{ questionThree }}] Q4:
-            [{{ questionFour }}] </li>
-    </ul>
-    {{/if}}
-    {{/each}}
+    <a href="/results">Go To Results</a>
+    <br /> <br />
+    {{form-open 'record' url class='form' action="/api/submit" method="post" }}
+    {{!-- {{form-file 'fileupload'}} --}}
+    <input type="hidden" name="anger" value="true">
+    <input type="hidden" name="contempt" value="false">
+    <input type="hidden" name="disgust" value="false">
+    <input type="hidden" name="fear" value="false">
+    <input type="hidden" name="happiness" value="false">
+    <input type="hidden" name="neutral" value="false">
+    <input type="hidden" name="sadness" value="false">
+    <input type="hidden" name="surprise" value="false">
+    <input type="hidden" name="eyeMakeup" value="false">
+    <input type="hidden" name="lipMakeup" value="false">
+    <input type="hidden" name="moustache" value="false">
+    <input type="hidden" name="beard" value="false">
+    <input type="hidden" name="smile" value="false">
+    <br /> <br />
+    {{#data}}
+    <label value="questionOne">{{ questionOne }}</label>
+    <input type="radio" name="questionOne" checked value="0" />0
+    <input type="radio" name="questionOne" value="1" />1
+    <input type="radio" name="questionOne" value="2" />2
+    <input type="radio" name="questionOne" value="3" />3
+    <input type="radio" name="questionOne" value="4" />4
+    <input type="radio" name="questionOne" value="5" />5
+    <input type="radio" name="questionOne" value="6" />6
+    <input type="radio" name="questionOne" value="7" />7
+    <input type="radio" name="questionOne" value="8" />8
+    <input type="radio" name="questionOne" value="9" />9
+    <br />
+    <label value="questionTwo">{{ questionTwo }}</label>
+    <input type="radio" name="questionTwo" checked value="0" />0
+    <input type="radio" name="questionTwo" value="1" />1
+    <input type="radio" name="questionTwo" value="2" />2
+    <input type="radio" name="questionTwo" value="3" />3
+    <input type="radio" name="questionTwo" value="4" />4
+    <input type="radio" name="questionTwo" value="5" />5
+    <input type="radio" name="questionTwo" value="6" />6
+    <input type="radio" name="questionTwo" value="7" />7
+    <input type="radio" name="questionTwo" value="8" />8
+    <input type="radio" name="questionTwo" value="9" />9
+    <br />
+    <label value="questionThree">{{ questionThree }}</label>
+    <input type="radio" name="questionThree" checked value="0" />0
+    <input type="radio" name="questionThree" value="1" />1
+    <input type="radio" name="questionThree" value="2" />2
+    <input type="radio" name="questionThree" value="3" />3
+    <input type="radio" name="questionThree" value="4" />4
+    <input type="radio" name="questionThree" value="5" />5
+    <input type="radio" name="questionThree" value="6" />6
+    <input type="radio" name="questionThree" value="7" />7
+    <input type="radio" name="questionThree" value="8" />8
+    <input type="radio" name="questionThree" value="9" />9
+    <br />
+    <label value="questionFour">{{ questionFour }}</label>
+    <input type="radio" name="questionFour" checked value="0" />0
+    <input type="radio" name="questionFour" value="1" />1
+    <input type="radio" name="questionFour" value="2" />2
+    <input type="radio" name="questionFour" value="3" />3
+    <input type="radio" name="questionFour" value="4" />4
+    <input type="radio" name="questionFour" value="5" />5
+    <input type="radio" name="questionFour" value="6" />6
+    <input type="radio" name="questionFour" value="7" />7
+    <input type="radio" name="questionFour" value="8" />8
+    <input type="radio" name="questionFour" value="9" />9
+    {{/data}}
+    <br /> <br />
+    {{form-submit 'save' 'Submit form'}}
+    {{form-close}}
 </div>
 
 <script type="text/javascript">
