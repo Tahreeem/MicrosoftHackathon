@@ -24,19 +24,36 @@
     <br /> <br />
     {{form-open 'record' url class='form' action="/api/submit" method="post" }}
     {{!-- {{form-file 'fileupload'}} --}}
-    <input type="hidden" name="anger" value="true">
-    <input type="hidden" name="contempt" value="false">
-    <input type="hidden" name="disgust" value="false">
-    <input type="hidden" name="fear" value="false">
-    <input type="hidden" name="happiness" value="false">
-    <input type="hidden" name="neutral" value="false">
-    <input type="hidden" name="sadness" value="false">
-    <input type="hidden" name="surprise" value="false">
-    <input type="hidden" name="eyeMakeup" value="false">
-    <input type="hidden" name="lipMakeup" value="false">
-    <input type="hidden" name="moustache" value="false">
-    <input type="hidden" name="beard" value="false">
-    <input type="hidden" name="smile" value="false">
+    <h1>Detect Faces:</h1>
+    Enter the URL to an image that includes a face or faces, then click
+    the <strong>Analyze face</strong> button.<br><br>
+    Image to analyze: <input type="text" name="inputImage" id="inputImage"
+        value="https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg" />
+    <button onclick="processImage()">Analyze face</button><br><br>
+    <div id="wrapper" style="width:1020px; display:table;">
+        <div id="jsonOutput" style="width:600px; display:table-cell;">
+            Response:<br><br>
+            <textarea id="responseTextArea" class="UIInput" style="width:580px; height:400px;"></textarea>
+        </div>
+        <div id="imageDiv" style="width:200px; display:table-cell;">
+            Source image:<br><br>
+            <img id="sourceImage" width="200" />
+        </div>
+    </div>
+
+    <input type="hidden" name="anger" id="h1" value="true">
+    <input type="hidden" name="contempt" id="h2" value="false">
+    <input type="hidden" name="disgust" id="h3" value="false">
+    <input type="hidden" name="fear" id="h4" value="false">
+    <input type="hidden" name="happiness" id="h5" value="false">
+    <input type="hidden" name="neutral" id="h6" value="false">
+    <input type="hidden" name="sadness" id="h7" value="false">
+    <input type="hidden" name="surprise" id="h8" value="false">
+    <input type="hidden" name="eyeMakeup" id="h9" value="false">
+    <input type="hidden" name="lipMakeup" id="h10" value="false">
+    <input type="hidden" name="moustache" id="h11" value="false">
+    <input type="hidden" name="beard" id="h12" value="false">
+    <input type="hidden" name="smile" id="h13" value="false">
     <br /> <br />
     {{#data}}
     <label value="questionOne">{{ questionOne }}</label>
@@ -100,3 +117,5 @@
             });
     }
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/faceToMoodToSurvey.js"></script>
