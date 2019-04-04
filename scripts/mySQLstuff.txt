@@ -1,0 +1,94 @@
+DROP DATABASE IF EXISTS AzureHack;
+
+Create database AzureHack;
+
+Use AzureHack;
+
+Create table test1 (
+_id INT NOT NULL AUTO_INCREMENT,
+recorded DateTime NOT NULL,
+anger boolean NOT NULL,
+contempt boolean NOT NULL,
+disgust boolean NOT NULL,
+fear boolean NOT NULL,
+happiness boolean NOT NULL,
+neutral boolean NOT NULL,
+sadness boolean NOT NULL,
+surprise boolean NOT NULL,
+eyeMakeup boolean NOT NULL,
+lipMakeup boolean NOT NULL,
+moustache boolean NOT NULL,
+beard boolean NOT NULL,
+smile boolean NOT NULL,
+questionOne INT NOT NULL,
+questionTwo INT NOT NULL,
+questionThree INT NOT NULL,
+questionFour INT NOT NULL,
+PRIMARY KEY (_id)
+);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), True, False, False, False, False, False, False, False, False, False, False, False, False, 4, 7, 2, 9);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), False, False, False, False, True, False, False, False, False, False, False, False, False, 2, 5, 9, 9);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), False, False, False, False, False, False, False, False, True, False, False, False, False, 1, 1, 6, 4);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), True, False, False, False, False, False, False, False, False, False, False, False, False, 9, 7, 8, 8);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), False, False, False, False, True, False, False, False, False, False, False, False, False, 8, 5, 9, 9);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), False, False, False, False, False, False, False, False, True, False, False, False, False, 8, 1, 8, 4);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), True, False, False, False, False, False, False, False, False, False, False, False, False, 7, 7, 2, 9);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), False, False, False, False, True, False, False, False, False, False, False, False, False, 6, 5, 6, 6);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), False, False, False, False, False, False, False, False, True, False, False, False, False, 1, 1, 6, 4);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), True, False, False, False, False, False, False, False, False, False, False, False, False, 4, 7, 2, 9);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), False, False, False, False, True, False, False, False, False, False, False, False, False, 2, 5, 9, 9);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), False, False, False, False, False, False, False, False, True, False, False, False, False, 6, 1, 6, 4);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), True, False, False, False, False, False, False, False, False, False, False, False, False, 4, 4, 2, 2);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), False, False, False, False, True, False, False, False, False, False, False, False, False, 2, 2, 9, 9);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), False, False, False, False, False, False, False, False, True, False, False, False, False, 1, 9, 2, 4);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), True, False, False, False, False, False, False, False, False, False, False, False, False, 5, 2, 2, 9);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), False, False, False, False, True, False, False, False, False, False, False, False, False, 1, 5, 9, 9);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), False, False, False, False, False, False, False, False, True, False, False, False, False, 1, 1, 6, 1);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), True, False, False, False, False, False, False, False, False, False, False, False, False, 4, 2, 2, 9);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), False, False, False, False, True, False, False, False, False, False, False, False, False, 2, 5, 3, 9);
+
+INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
+VALUES (now(), False, False, False, False, False, False, False, False, True, False, False, False, False, 1, 1, 6, 4);
+
+
+
