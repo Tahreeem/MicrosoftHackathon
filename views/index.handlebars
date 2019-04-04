@@ -23,20 +23,20 @@
     <a href="/results">Go To Results</a>
     <br /> <br />
     {{form-open 'record' url class='form' action="/api/submit" method="post" }}
-    {{!-- {{form-file 'fileupload'}} --}}
-    <input type="hidden" name="anger" value="true">
-    <input type="hidden" name="contempt" value="false">
-    <input type="hidden" name="disgust" value="false">
-    <input type="hidden" name="fear" value="false">
-    <input type="hidden" name="happiness" value="false">
-    <input type="hidden" name="neutral" value="false">
-    <input type="hidden" name="sadness" value="false">
-    <input type="hidden" name="surprise" value="false">
-    <input type="hidden" name="eyeMakeup" value="false">
-    <input type="hidden" name="lipMakeup" value="false">
-    <input type="hidden" name="moustache" value="false">
-    <input type="hidden" name="beard" value="false">
-    <input type="hidden" name="smile" value="false">
+    {{form-file 'fileupload'}}
+    <input type="hidden" name="anger" value=0>
+    <input type="hidden" name="contempt" value=1>
+    <input type="hidden" name="disgust" value=1>
+    <input type="hidden" name="fear" value=1>
+    <input type="hidden" name="happiness" value=1>
+    <input type="hidden" name="neutral" value=1>
+    <input type="hidden" name="sadness" value=1>
+    <input type="hidden" name="surprise" value=1>
+    <input type="hidden" name="eyeMakeup" value=1>
+    <input type="hidden" name="lipMakeup" value=1>
+    <input type="hidden" name="moustache" value=1>
+    <input type="hidden" name="beard" value=1>
+    <input type="hidden" name="smile" value=1>
     <br /> <br />
     {{#data}}
     <label value="questionOne">{{ questionOne }}</label>

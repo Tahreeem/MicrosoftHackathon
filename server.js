@@ -6,8 +6,6 @@ MomentHandler.registerHelpers(Handlebars);
 const hbsFormHelper = require('handlebars-form-helper');
 var app = express();
 
-var survey = require("./models/survey.js");
-
 var PORT = process.env.PORT || 3000;
 
 app.use(express.static("public"));
@@ -136,7 +134,7 @@ var orm = {
   };
 
 app.post("/api/submit", function (req, res) {
-    survey.insertOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function (result) {
+    survey.insertOne(["recorded", "anger", "contempt", "disgust", "fear", "happiness", "neutral", "sadness", "surprise", "eyeMakeup", "lipMakeup", "moustache", "beard", "smile", "questionOne", "questionTwo", "questionThree", "questionFour"], [ new Date(), req.body.anger, req.body.contempt, req.body.disgust, req.body.fear, req.body.happiness, req.body.neutral, req.body.sadness, req.body.surprise, req.body.eyeMakeup, req.body.lipMakeup, req.body.moustache, req.body.beard, req.body.smile, req.body.questionOne, req.body.questionTwo, req.body.questionThree, req.body.questionFour], function (result) {
         // Send back the ID of the new quote
         res.json({ id: result.insertId });
     });

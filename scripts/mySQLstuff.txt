@@ -90,5 +90,18 @@ VALUES (now(), False, False, False, False, True, False, False, False, False, Fal
 INSERT INTO test1 (recorded, anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour)
 VALUES (now(), False, False, False, False, False, False, False, False, True, False, False, False, False, 1, 1, 6, 4);
 
+Use AzureHack;
+
+Create table survey (
+_id INT NOT NULL AUTO_INCREMENT,
+questionOne VARCHAR(50) NOT NULL,
+questionTwo VARCHAR(50) NOT NULL,
+questionThree VARCHAR(50) NOT NULL,
+questionFour VARCHAR(50) NOT NULL,
+PRIMARY KEY (_id)
+);
+
+INSERT INTO survey (questionOne, questionTwo, questionThree, questionFour)
+VALUES ("How Do You Feel When You Wake Up", "How Do You Feel When You Get To Work", "How Hopeful Do You Feel About The Future", "How Often Do You Think About Death");
 
 
