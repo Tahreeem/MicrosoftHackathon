@@ -3,13 +3,21 @@ var exphbs = require("express-handlebars");
 var Handlebars = require("handlebars");
 var MomentHandler = require("handlebars.moment");
 MomentHandler.registerHelpers(Handlebars);
-var hbs = require('hbs');
-require('handlebars-form-helpers').register(hbs.handlebars);
+const hbsFormHelper = require('handlebars-form-helper');
 var app = express();
 
 var PORT = process.env.PORT || 3000;
 
 app.use(express.static("public"));
+
+const hbs = exphbs.create({
+  defaultLayout: 'app',
+  extname: '.hbs',
+  layoutsDir: `${__dirname}/app/views/layouts/`,
+  partialsDir: `${__dirname}/app/views/partials/`,
+});
+// Call the registerHelper and pass in the handlebars object
+hbsFormHelper.registerHelpers(hbs.handlebars, { namespace: 'form' });
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
@@ -35,7 +43,7 @@ con.connect(function (err) {
 });
 
 app.get("/", function (req, res) {
-    con.query("SELECT * FROM AzureHack.test1;", function (err, data) {
+    con.query("SELECT * FROM AzureHack.survey;", function (err, data) {
         if (err) throw err;
         console.log(data);
         res.render("index", {data: data});
