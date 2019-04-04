@@ -50,6 +50,15 @@ app.get("/", function (req, res) {
     });
 });
 
+app.post("/api/submit", function(req, res) {
+    con.query("INSERT INTO test1 (anger, contempt, disgust, fear, happiness, neutral, sadness, surprise, eyeMakeup, lipMakeup, moustache, beard, smile, questionOne, questionTwo, questionThree, questionFour) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", function (err, data) {
+        if (err) throw err;
+        console.log(data);
+        res.render("index", {data: data});
+        // res.json({ id: result.insertId });
+    });
+  });
+
 app.listen(PORT, function () {
     console.log("App listening on PORT: " + PORT);
 });

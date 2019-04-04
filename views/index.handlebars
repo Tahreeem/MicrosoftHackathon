@@ -21,12 +21,12 @@
 
 <div class="mainContainer">
     <br /> <br />
-    {{form-open 'record' url class='form'}}
+    {{form-open 'record' url class='form' action="/api/submit" method="post" }}
     {{form-file 'fileupload'}}
     <br /> <br />
     {{#data}}
     <label value="questionOne">{{ questionOne }}</label>
-    <input type="radio" name="questionOne" value="0" />
+    <input type="radio" name="questionOne" checked value="0" />
     <input type="radio" name="questionOne" value="1" />
     <input type="radio" name="questionOne" value="2" />
     <input type="radio" name="questionOne" value="3" />
@@ -38,7 +38,7 @@
     <input type="radio" name="questionOne" value="9" />
     <br />
     <label value="questionTwo">{{ questionTwo }}</label>
-    <input type="radio" name="questionTwo" value="0" />
+    <input type="radio" name="questionTwo" checked value="0" />
     <input type="radio" name="questionTwo" value="1" />
     <input type="radio" name="questionTwo" value="2" />
     <input type="radio" name="questionTwo" value="3" />
@@ -50,7 +50,7 @@
     <input type="radio" name="questionTwo" value="9" />
     <br />
     <label value="questionThree">{{ questionThree }}</label>
-    <input type="radio" name="questionThree" value="0" />
+    <input type="radio" name="questionThree" checked value="0" />
     <input type="radio" name="questionThree" value="1" />
     <input type="radio" name="questionThree" value="2" />
     <input type="radio" name="questionThree" value="3" />
@@ -62,7 +62,7 @@
     <input type="radio" name="questionThree" value="9" />
     <br />
     <label value="questionFour">{{ questionFour }}</label>
-    <input type="radio" name="questionFour" value="0" />
+    <input type="radio" name="questionFour" checked value="0" />
     <input type="radio" name="questionFour" value="1" />
     <input type="radio" name="questionFour" value="2" />
     <input type="radio" name="questionFour" value="3" />
